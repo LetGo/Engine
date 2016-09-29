@@ -1,0 +1,3 @@
+xcopy $(ProjectDir)$(OutDir)$(ProjectName).pdb $(ProjectDir)..\..\Develeper\Assets\Dll\ /s /e /y
+
+xcopy $(ProjectDir)$(OutDir)$(ProjectName).dll $(ProjectDir)..\..\Develeper\Assets\Dll\ /s /e /y

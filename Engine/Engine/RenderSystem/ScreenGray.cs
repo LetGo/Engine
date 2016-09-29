@@ -2,7 +2,7 @@
 //	创建日期:	2016-9-29 9:46
 //	文件名称:	ScreenGray.cs
 //  创 建 人:   	Chengxue.Zhao
-//	版权所有:	中青宝
+//	版权所有:	Let_Go
 //	说    明:	死亡屏幕灰化效果
 //*************************************************************************
 using System;
@@ -11,10 +11,10 @@ using UnityEngine;
 
 namespace Engine
 {
-    class ScreenGray :MonoBehaviour
+    public class ScreenGray :MonoBehaviour
     {
         private Shader m_curShader;
-        private float m_fGrayScaleAmount = 1.0f;
+        public float m_fGrayScaleAmount = 1.0f;
         private Material m_curMaterial;
         public Material material
         {
@@ -60,6 +60,14 @@ namespace Engine
             else
             {
                 Graphics.Blit(sourceTex, destTex);
+            }
+        }
+
+        void Update()
+        {
+            if (Application.isEditor)
+            {
+                m_fGrayScaleAmount = Mathf.Clamp(m_fGrayScaleAmount, 0.0f, 1.0f);
             }
         }
     }

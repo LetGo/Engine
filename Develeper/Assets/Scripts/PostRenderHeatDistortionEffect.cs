@@ -13,10 +13,10 @@ public class PostRenderHeatDistortionEffect : PostRenderBase
     private void Awake()
     {
         string path = "map/prefab/commontexture/Distortion2.unity3d";
-        Engine.ITexture mapTex = null;
-        Engine.RareEngine.Instance().GetRenderSystem().CreateTexture(ref path, ref mapTex, null, null, Engine.TaskPriority.TaskPriority_Immediate);
-
-        texture = mapTex.GetTexture();
+//         Engine.ITexture mapTex = null;
+//         Engine.RareEngine.Instance().GetRenderSystem().CreateTexture(ref path, ref mapTex, null, null, Engine.TaskPriority.TaskPriority_Immediate);
+// 
+//         texture = mapTex.GetTexture();
 
         shader = Shader.Find("HeatDistortion");
     }

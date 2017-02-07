@@ -34,3 +34,7 @@ sysinfo.txt
 
 /Engine/Engine/bin
 /Engine/Engine/obj
+/Engine/Utility/bin
+/Engine/Utility/obj
+/Engine/NetWork/bin
+/Engine/NetWork/obj

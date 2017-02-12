@@ -8,19 +8,19 @@
 using System;
 using System.Collections.Generic;
 
-namespace Engine.Utility
+namespace Engine
 {
     public abstract class BaseState
     {
         protected Enum m_stateEnum;
-        public virtual void Enter(object param);
-        public virtual void Exit();
-        public virtual void Update(float dt);
-        public virtual void OnEvent(Enum evenid,object param);
-        public virtual Enum GetStateEnum() { return m_stateEnum; }
+//         public virtual void Enter(object param);
+//         public virtual void Exit();
+//         public virtual void Update(float dt);
+//         public virtual void OnEvent(Enum evenid,object param);
+//         public virtual Enum GetStateEnum() { return m_stateEnum; }
     }
 
-    class StateMachine
+    public class StateMachine<T>
     {
     }
 }

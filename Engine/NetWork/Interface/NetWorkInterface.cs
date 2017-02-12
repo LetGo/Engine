@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NetWork
+namespace Engine.NetWork
 {
     /// <summary>
     /// 网络连接接口
@@ -13,7 +13,7 @@ namespace NetWork
 
         bool IsConnect();
 
-        void SendMsg();
+        void SendMsg(NetPackageOut pak);
 
         void Destroy();
     }
@@ -23,15 +23,21 @@ namespace NetWork
     /// </summary>
     public interface INetLinkSink
     {
-        void OnConnectError();
+        void OnConnectError(NetWorkError e);
 
         void Update();
 
         void OnDisConnect();
 
         void ReConnected();
-
+        void OnReceive(NetPackageIn msg);
         void OnClose();
+
+        Action<bool> ConnectCallback
+        {
+            get;
+            set;
+        }
     }
 
     /// <summary>
@@ -39,9 +45,9 @@ namespace NetWork
     /// </summary>
     public interface INetLinkMonitor
     {
-        void OnReceive();
+        void OnReceive(NetPackageIn pak);
 
-        void OnSend();
+        void OnSend(NetPackageOut pak);
 
         long GetTotalReceiveBytes();
 

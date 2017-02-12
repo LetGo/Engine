@@ -38,3 +38,7 @@ sysinfo.txt
 /Engine/Utility/obj
 /Engine/NetWork/bin
 /Engine/NetWork/obj
+/Game/GameMain/bin
+/Game/GameMain/obj
+/Game/Interface/bin
+/Game/Interface/obj

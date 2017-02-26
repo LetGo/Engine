@@ -7,6 +7,7 @@ namespace Engine.NetWork
 {
     public class NetWork : Singleton<NetWork>
     {
+        public static string PROTOBUFFASSEMBLY = "DataCenter";
         // 网络连接
         private NetLink m_netLink = null;
 

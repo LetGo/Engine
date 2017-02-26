@@ -3,27 +3,7 @@ using System.Collections;
 
 public class Bubble : MonoBehaviour {
 
-    public int[] array;
-
-	void Start () 
-    {
-	
-	}
-	
-	void Update () {
-	
-	}
-
-    void OnGUI()
-    {
-
-        if (GUILayout.Button("START"))
-        {
-            Sort();
-        }
-    }
-
-    void Sort(bool doStop = false)
+    public static void Sort(int[] array)
     {
         if (array == null)
         {

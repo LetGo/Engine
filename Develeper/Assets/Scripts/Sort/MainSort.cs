@@ -17,6 +17,11 @@ namespace Assets.Scripts.Sort
                 Bubble.Sort(array);
             }
 
+            if (GUILayout.Button("START Select"))
+            {
+                Select.Sort(array);
+            }
+
             if (GUILayout.Button("START Insert"))
             {
                 Insert.Sort(array);

@@ -4,12 +4,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Sort
 {
-
-    public class Insert :MonoBehaviour
+    class Insert
     {
         public static void Sort(int[] array)
         {
-
             if (array == null)
             {
                 return;
@@ -20,38 +18,41 @@ namespace Assets.Scripts.Sort
             {
                 msg += array[i] + " ";
             }
+
             Debug.Log(msg);
-
-            int minIndex = 0;
             
-            int startIndex = 0;
-
-            while (startIndex < array.Length - 1)
+            for (int i = 1; i < array.Length; i++)
             {
-                minIndex = startIndex;
-
-                for (int i = startIndex + 1; i < array.Length; i++)
+                int currIndex = i;
+                int currNum = array[currIndex];
+                
+                while (currIndex - 1 >= 0)
                 {
-                    if (array[i] < array[minIndex])
+                    if (currNum < array[currIndex - 1] )
                     {
-                        minIndex = i;
+                        array[currIndex] = array[currIndex - 1];
+                    }
+                    else
+                    {
+                        array[currIndex] = currNum;
+                        break;
+                    }
+                    currIndex--;
+                    if (currIndex ==  0)
+                    {
+                        array[currIndex] = currNum;
                     }
                 }
 
-                int temp = array[startIndex];
-                array[startIndex] = array[minIndex];
-                array[minIndex] = temp;
-
-                startIndex++;
-
-                msg = string.Format(" 第{0}次排序: ",startIndex);
-                for (int i = 0; i < array.Length; i++)
+                msg = string.Format(" 第{0}次排序 当前数字 {1}: ", i,currNum);
+                
+                for (int n = 0; n < array.Length; n++)
                 {
-                    msg += array[i] + " ";
+                    msg += array[n] + " ";
                 }
+                
                 Debug.Log(msg);
             }
         }
-
     }
 }
